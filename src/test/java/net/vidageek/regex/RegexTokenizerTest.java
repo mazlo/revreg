@@ -35,7 +35,7 @@ final public class RegexTokenizerTest {
 
     @Test
     public void testThatTokenizesCharGroup() {
-        List<RegexToken> list = tokenizer.tokenize("[ab]");
+		List<RegexToken> list = tokenizer.tokenize( "[a-c]" );
         Assert.assertEquals(1, list.size());
         Assert.assertEquals(CharGroupToken.class, list.get(0).getClass());
     }

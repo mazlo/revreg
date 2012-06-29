@@ -1,6 +1,6 @@
 package net.vidageek.regex;
 
-public interface RegexToken {
+public interface RegexToken extends Comparable<RegexToken> {
 
     String getWord();
 

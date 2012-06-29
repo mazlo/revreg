@@ -11,7 +11,16 @@ final public class SimpleCharToken implements RegexToken {
     }
 
     public String getWord() {
-        return "" + c;
+		return Character.toString( c ).toLowerCase();
     }
+
+	@Override
+	public String toString() {
+		return Character.toString( c );
+	}
+
+	public int compareTo( RegexToken o ) {
+		return getWord().compareTo( o.getWord() );
+	}
 
 }

@@ -20,4 +20,9 @@ final public class RegexTest {
     public void testThatThrowsExceptionIfRegexDoesNotCompile() {
         new Regex("ab(");
     }
+
+	@Test
+	public void test() {
+		System.out.println( new Regex( "[0-3]{2}[A-C]{3,4}" ).generateMatchingWord() );
+	}
 }
