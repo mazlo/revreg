@@ -23,6 +23,8 @@ final public class RegexTest {
 
 	@Test
 	public void test() {
-		System.out.println( new Regex( "[0-3]{2}[A-C]{3,4}" ).generateMatchingWord() );
+		System.out.println( new Regex( "\\d{2}[A-C]{3,4}" ).generateMatchingWord() );
 	}
+
+	// TODO add tests
 }

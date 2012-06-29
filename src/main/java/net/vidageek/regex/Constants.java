@@ -12,7 +12,7 @@ public class Constants {
 	public static final List<Character> spaces = new ArrayList<Character>();
 	public static final List<String> shortCharset = new ArrayList<String>();
 
-	public static final Map<String, List<Character>> map = new HashMap<String, List<Character>>();
+	public static final Map<String, String> map = new HashMap<String, String>();
 
 	static {
 		letters.add( 'A' );
@@ -82,7 +82,7 @@ public class Constants {
 
 		spaces.add( ' ' );
 
-		map.put( "\\d", digits );
-		map.put( "\\s", spaces );
+		map.put( "\\d", "[0-9]" );
+		map.put( "\\s", " " );
 	}
 }
