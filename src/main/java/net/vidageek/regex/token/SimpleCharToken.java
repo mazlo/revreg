@@ -2,6 +2,13 @@ package net.vidageek.regex.token;
 
 import net.vidageek.regex.RegexToken;
 
+/**
+ * Represents a simple char token in a regular expression, e.g. the letter
+ * <i>a</i> or the symbol <i>,</i>.
+ * 
+ * @author matthaeus
+ * 
+ */
 final public class SimpleCharToken implements RegexToken {
 
     private final char c;

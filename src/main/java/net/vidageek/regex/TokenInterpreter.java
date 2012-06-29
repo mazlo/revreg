@@ -2,6 +2,12 @@ package net.vidageek.regex;
 
 import net.vidageek.regex.reader.RegexPartData;
 
+/**
+ * Provides methods to interpret parts of a regular expression.
+ * 
+ * @author matthaeus
+ * 
+ */
 public interface TokenInterpreter {
 
 	/**

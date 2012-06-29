@@ -1,18 +1,18 @@
 package net.vidageek.regex.datapoints;
 
-import net.vidageek.regex.Regex;
+import net.vidageek.regex.RegexGenerator;
 
 import org.junit.experimental.theories.DataPoint;
 
 public interface CharacterDatapoints {
 
     @DataPoint
-    Regex a = new Regex("a");
+    RegexGenerator a = new RegexGenerator("a");
 
     @DataPoint
-    Regex b = new Regex("b");
+    RegexGenerator b = new RegexGenerator("b");
 
     @DataPoint
-    Regex ab = new Regex("[ab]");
+    RegexGenerator ab = new RegexGenerator("[ab]");
 
 }

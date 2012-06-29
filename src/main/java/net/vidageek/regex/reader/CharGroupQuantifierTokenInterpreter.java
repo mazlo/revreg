@@ -18,6 +18,10 @@ public class CharGroupQuantifierTokenInterpreter implements TokenInterpreter {
 	}
 
 	public boolean accept( String regex ) {
+		if ( regex.startsWith( "\\" ) )
+			// do not match short char sets
+			return false;
+
 		// accept only if quantifier braces are given
 		if ( regex.indexOf( "{" ) > 0 && regex.indexOf( "}" ) > 0 )
 			return true;

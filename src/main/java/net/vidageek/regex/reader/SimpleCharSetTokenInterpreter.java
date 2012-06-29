@@ -42,20 +42,25 @@ public class SimpleCharSetTokenInterpreter implements TokenInterpreter {
 		char first = range[0].charAt( 0 );
 		char last = range[1].charAt( 0 );
 
+		List<Character> charset = Constants.letters;
+
+		if ( Character.isDigit( first ) )
+			charset = Constants.digits;
+
 		boolean began = false;
-		for ( int i = 0; i < Constants.letters.size(); i++ ) {
+		for ( int i = 0; i < charset.size(); i++ ) {
 			// add chars from the first match to the last match
 			if ( !began )
-				if ( Constants.letters.get( i ) == first ) {
+				if ( charset.get( i ) == first ) {
 					began = true;
 
-					prefixTokens.add( new SimpleCharToken( Constants.letters.get( i ) ) );
+					prefixTokens.add( new SimpleCharToken( charset.get( i ) ) );
 					continue;
 				}
 
-			prefixTokens.add( new SimpleCharToken( Constants.letters.get( i ) ) );
+			prefixTokens.add( new SimpleCharToken( charset.get( i ) ) );
 
-			if ( Constants.letters.get( i ) == last )
+			if ( charset.get( i ) == last )
 				break;
 
 		}

@@ -10,6 +10,14 @@ import net.vidageek.regex.reader.ShortSimpleCharTokenInterpreter;
 import net.vidageek.regex.reader.SimpleCharSetTokenInterpreter;
 import net.vidageek.regex.reader.SimpleCharTokenInterpreter;
 
+/**
+ * Provides methods for tokenization of a regular expression. The result is a
+ * list of RegexTokens.
+ * 
+ * @author matthaeus
+ * @see RegexToken
+ * 
+ */
 final public class RegexTokenizer {
 
     private final List<TokenInterpreter> readers;

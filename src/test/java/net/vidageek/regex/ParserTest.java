@@ -19,10 +19,10 @@ final public class ParserTest implements CharacterDatapoints {
     }
 
     @Theory
-    public void testThatRegexMatches(final Regex regex) {
+    public void testThatRegexMatches(final RegexGenerator regex) {
         String word = new Parser(regex).parse();
 
-        Assert.assertTrue("Regex " + regex.asString() + " didn't match word " + word + ".", Pattern.compile(
-                regex.asString()).matcher(word).matches());
+        Assert.assertTrue("Regex " + regex.getOriginalRegex() + " didn't match word " + word + ".", Pattern.compile(
+                regex.getOriginalRegex()).matcher(word).matches());
     }
 }

@@ -7,23 +7,23 @@ final public class RegexTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testThatThrowsExceptionIfStringIsNull() {
-        new Regex(null);
+        new RegexGenerator(null);
     }
 
     @Test
     public void testThatAsStringReturnsTheSameStringPassed() {
         String regex = "abc";
-        Assert.assertEquals(regex, new Regex(regex).asString());
+        Assert.assertEquals(regex, new RegexGenerator(regex).getOriginalRegex());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testThatThrowsExceptionIfRegexDoesNotCompile() {
-        new Regex("ab(");
+        new RegexGenerator("ab(");
     }
 
 	@Test
 	public void test() {
-		System.out.println( new Regex( "\\d{2}[A-C]{3,4}" ).generateMatchingWord() );
+		System.out.println( new RegexGenerator( "\\d{2}[a-zA-Z]{3,4}" ).generateMatchingWord() );
 	}
 
 	// TODO add tests
