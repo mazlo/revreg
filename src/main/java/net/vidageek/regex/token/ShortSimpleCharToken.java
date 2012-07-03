@@ -1,8 +1,13 @@
 package net.vidageek.regex.token;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.vidageek.regex.RegexToken;
 
 public class ShortSimpleCharToken implements RegexToken {
+
+	private final String s;
 
 	public ShortSimpleCharToken(final String s) {
 		this.s = s;
@@ -12,7 +17,6 @@ public class ShortSimpleCharToken implements RegexToken {
 		return getWord().compareTo( o.getWord() );
 	}
 
-	private final String s;
 
     public String getWord() {
 		return s.toLowerCase();
@@ -22,4 +26,12 @@ public class ShortSimpleCharToken implements RegexToken {
 	public String toString() {
 		return s.toString();
 	}
+
+	public List<RegexToken> getTokens() {
+		List<RegexToken> tokens = new ArrayList<RegexToken>();
+		tokens.add( this );
+
+		return tokens;
+	}
+
 }

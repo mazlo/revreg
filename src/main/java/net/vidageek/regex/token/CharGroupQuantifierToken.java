@@ -29,4 +29,12 @@ public class CharGroupQuantifierToken implements RegexToken {
 		return builder.toString();
 	}
 
+	public List<RegexToken> getTokens() {
+		if ( tokens.size() > 0 )
+			if ( tokens.get( 0 ) instanceof CharGroupQuantifierToken )
+				return tokens.get( 0 ).getTokens();
+
+		return tokens;
+	}
+
 }

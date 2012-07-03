@@ -56,7 +56,8 @@ public class SimpleCharSetTokenInterpreter implements TokenInterpreter {
 
 					prefixTokens.add( new SimpleCharToken( charset.get( i ) ) );
 					continue;
-				}
+				} else
+					continue;
 
 			prefixTokens.add( new SimpleCharToken( charset.get( i ) ) );
 

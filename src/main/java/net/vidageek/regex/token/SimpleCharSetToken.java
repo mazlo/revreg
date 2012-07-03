@@ -23,4 +23,8 @@ public class SimpleCharSetToken implements RegexToken {
 		return getWord().compareTo( o.getWord() );
 	}
 
+	public List<RegexToken> getTokens() {
+		return tokens;
+	}
+
 }

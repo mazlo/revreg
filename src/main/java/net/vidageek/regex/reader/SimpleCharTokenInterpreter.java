@@ -6,8 +6,15 @@ import net.vidageek.regex.token.SimpleCharToken;
 final public class SimpleCharTokenInterpreter implements TokenInterpreter {
 
     public boolean accept(final String regex) {
+		// do not match char group tokens
+		if ( regex.startsWith( "[" ) )
+			return false;
+
 		// do not match set statements, e.g. 0-9
 		if ( regex.contains( "-" ) )
+			return false;
+
+		if ( regex.startsWith( "\\" ) )
 			return false;
 
 		// but match any character

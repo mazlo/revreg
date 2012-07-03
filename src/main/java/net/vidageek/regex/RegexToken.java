@@ -1,5 +1,7 @@
 package net.vidageek.regex;
 
+import java.util.List;
+
 /**
  * Represents a token in the regular expression. A token can be seen as a part
  * of the regular expression. For example, the regular expression
@@ -12,5 +14,7 @@ package net.vidageek.regex;
 public interface RegexToken extends Comparable<RegexToken> {
 
     String getWord();
+
+	List<RegexToken> getTokens();
 
 }
