@@ -23,6 +23,9 @@ public class SimpleCharSetTokenInterpreter implements TokenInterpreter {
 		if ( regex.indexOf( "{" ) > 0 )
 			return false;
 
+		if ( regex.startsWith( "\\d" ) || regex.startsWith( "\\s" ) )
+			return false;
+
 		// match set statements, e.g. 0-9
 		if ( regex.contains( "-" ) )
 			return true;
