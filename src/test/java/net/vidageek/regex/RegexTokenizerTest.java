@@ -4,6 +4,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 import net.vidageek.regex.token.CharGroupToken;
+import net.vidageek.regex.token.SimpleCharQuantifierToken;
 import net.vidageek.regex.token.SimpleCharToken;
 
 import org.junit.Before;
@@ -39,6 +40,20 @@ final public class RegexTokenizerTest {
         Assert.assertEquals(1, list.size());
         Assert.assertEquals(CharGroupToken.class, list.get(0).getClass());
     }
+
+	@Test
+	public void testSimpleCharQuantifier() {
+		List<RegexToken> list = tokenizer.tokenize( "a{2}" );
+		Assert.assertEquals( 1, list.size() );
+		Assert.assertEquals( SimpleCharQuantifierToken.class, list.get( 0 ).getClass() );
+
+		list = tokenizer.tokenize( "ab{2}" );
+		Assert.assertEquals( 2, list.size() );
+		Assert.assertEquals( SimpleCharToken.class, list.get( 0 ).getClass() );
+		Assert.assertEquals( SimpleCharQuantifierToken.class, list.get( 1 ).getClass() );
+
+		Assert.assertEquals( 2, list.get( 1 ).getTokens().size() );
+	}
 
 	@Test
 	public void testLetterCharGroupTokens() {
@@ -103,7 +118,7 @@ final public class RegexTokenizerTest {
 		Assert.assertEquals( 3, list.get( 0 ).getTokens().size() );
 
 		list = tokenizer.tokenize( "\\s{3}" );
-		Assert.assertEquals( 3, list.size() );
+		Assert.assertEquals( 3, list.get( 0 ).getTokens().size() );
 
 	}
 

@@ -17,6 +17,9 @@ final public class SimpleCharTokenInterpreter implements TokenInterpreter {
 		if ( regex.startsWith( "\\" ) )
 			return false;
 
+		if ( regex.length() > 1 && regex.charAt( 1 ) == '{' )
+			return false;
+
 		// but match any character
 		if ( Character.isDefined( regex.charAt( 0 ) ) ) {
             return true;

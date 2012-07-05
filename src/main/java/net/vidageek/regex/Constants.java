@@ -83,6 +83,6 @@ public class Constants {
 		spaces.add( ' ' );
 
 		map.put( "\\d", "[0-9]" );
-		map.put( "\\s", " " );
+		map.put( "\\s", "[ ]" );
 	}
 }

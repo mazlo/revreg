@@ -7,6 +7,7 @@ import net.vidageek.regex.reader.CharGroupQuantifierTokenInterpreter;
 import net.vidageek.regex.reader.CharGroupTokenInterpreter;
 import net.vidageek.regex.reader.RegexPartData;
 import net.vidageek.regex.reader.ShortSimpleCharTokenInterpreter;
+import net.vidageek.regex.reader.SimpleCharQuantifierTokenInterpreter;
 import net.vidageek.regex.reader.SimpleCharSetTokenInterpreter;
 import net.vidageek.regex.reader.SimpleCharTokenInterpreter;
 
@@ -25,6 +26,7 @@ final public class RegexTokenizer {
     public RegexTokenizer() {
         readers = new ArrayList<TokenInterpreter>();
 		readers.add( new SimpleCharTokenInterpreter() ); // e.g. a
+		readers.add( new SimpleCharQuantifierTokenInterpreter( this ) ); // e.g. a{3}
 		readers.add( new CharGroupTokenInterpreter( readers ) ); // e.g. [abc]
 		readers.add( new SimpleCharSetTokenInterpreter( this ) ); // e.g. [a-z]
 		readers.add( new ShortSimpleCharTokenInterpreter( readers ) ); // e.g. \\d
